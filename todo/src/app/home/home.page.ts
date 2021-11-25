@@ -12,7 +12,7 @@ export class HomePage {
   constructor(public alertController: AlertController, 
     public todoService: TodoService,
     public toastController: ToastController) {}
-
+dd 
   async presentAlertPromptAdd() {
     const alert = await this.alertController.create({
        header: 'Adicionar Tarefa!',
@@ -39,7 +39,7 @@ export class HomePage {
             if (alertData.todo != "")
             this.todoService.addTodo(alertData.todo, alertData.date);
             else {
-              this.presentToast;
+              this.presentToast();
               this.presentAlertPromptAdd();
             }
             
