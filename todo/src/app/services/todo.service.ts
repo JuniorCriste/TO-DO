@@ -10,7 +10,7 @@ export class TodoService {
 
   constructor() { }
 
-  public getTodo() : Todo[] {
+  public getTodos() : Todo[] {
     return this.todos;
   }
 
