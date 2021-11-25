@@ -41,7 +41,7 @@ export class HomePage {
             else {
               this.presentToast();
               this.presentAlertPromptAdd();
-            }
+              }
             
           }
         }
