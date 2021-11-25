@@ -1,5 +1,6 @@
+import { TodoService } from './../services/todo.service';
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController, 
+    public todoService: TodoService,
+    public toastController: ToastController) {}
 
   async presentAlertPromptAdd() {
     const alert = await this.alertController.create({
@@ -32,8 +35,14 @@ export class HomePage {
           role: 'cancel'
         }, {
           text: 'Salvar',
-          handler: () => {
-            console.log('Tarefa adicionada!');
+          handler: (alertData) => {
+            if (alertData.todo != "")
+            this.todoService.addTodo(alertData.todo, alertData.date)
+            else {
+              this.presentToast();
+              this.presentAlertPromptAdd();
+            }
+            
           }
         }
       ]
@@ -43,6 +52,13 @@ export class HomePage {
   }
 
 
+  async presentToast(){
+    const toast = await this.toastController.create({
+      message: "Preencha a tarefa",
+      duration: 2000
+    });
+    toast.present();
+  }
 
 
 
