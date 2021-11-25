@@ -37,9 +37,9 @@ export class HomePage {
           text: 'Salvar',
           handler: (alertData) => {
             if (alertData.todo != "")
-            this.todoService.addTodo(alertData.todo, alertData.date)
+            this.todoService.addTodo(alertData.todo, alertData.date);
             else {
-              this.presentToast();
+              this.presentToast;
               this.presentAlertPromptAdd();
             }
             
