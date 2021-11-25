@@ -15,7 +15,7 @@ export class TodoService {
   }
 
   public addTodo(value: string, date: string) {
-   // date = date.replace("-", "/");
+    date = date.replace("-", "/");
     let todo : Todo = {value: value, date: new Date(date), done: false};
     this.todos.push(todo);
     console.log(this.todos);
