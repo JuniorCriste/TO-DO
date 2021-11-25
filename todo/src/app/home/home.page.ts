@@ -18,7 +18,7 @@ export class HomePage {
        header: 'Adicionar Tarefa!',
       inputs: [
         {
-          name: 'tarefa',
+          name: 'todo',
           type: 'text',
           placeholder: 'Tarefa'
         },
@@ -52,9 +52,9 @@ export class HomePage {
   }
 
 
-  async presentToast(){
+  async presentToast() {
     const toast = await this.toastController.create({
-      message: "Preencha a tarefa",
+      message: "Preencha a tarafa!",
       duration: 2000
     });
     toast.present();
