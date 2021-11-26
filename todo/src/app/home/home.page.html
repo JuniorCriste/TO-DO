@@ -12,11 +12,13 @@
 
   
 <ion-segment [(ngModel)]="type">
-  <ion-segment-button value="home">
-    <ion-icon name="home"></ion-icon>
+  <ion-segment-button value="pending" layout="icon-start">
+    <ion-icon name="alert-circle"></ion-icon>
+    <ion-label>Pendentes</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="heart">
+  <ion-segment-button value="done" layout="icon-start">
     <ion-icon name="heart"></ion-icon>
+    <ion-label>Concluídas</ion-label>
   </ion-segment-button>
 </ion-segment>
 
