@@ -15,7 +15,7 @@ export class HomePage {
 
   async presentAlertPromptAdd() {
     const alert = await this.alertController.create({
-       header: 'Adicionar Tarefa!',
+       header: 'Adicionar tarefa!',
       inputs: [
         {
           name: 'todo',
@@ -55,7 +55,7 @@ export class HomePage {
 
   async presentAlertPromptDelete(index: number) {
     const alert = await this.alertController.create({
-       header: 'Excluir Tarefa!',
+       header: 'Excluir tarefa!',
        message: 'Deseja realmente excluir a tarefa?',
       buttons: [
         {
@@ -71,6 +71,53 @@ export class HomePage {
 
     await alert.present();
   }
+
+
+
+
+  async presentAlertPromptUpdate(index: number, todo) {
+    const alert = await this.alertController.create({
+       header: 'Alterar dados da tarefa!',
+      inputs: [
+        {
+          name: 'todo',
+          type: 'text',
+          placeholder: 'Tarefa',
+          value: todo.value
+        },
+        {
+          name: 'date',
+          type: 'date',
+          min: '2021-01-01',
+          max: '2025-12-31',
+          value: todo.date.getFullYear() + "-" + ((todo.date.getMonth() + 1) < 10 ? "0" + todo.date.getMonth()+1 : todo.date.
+          getMonth()+1) + "-" + ((todo.date.getDay() + 1) < 10 ? "0" + todo.date.getDay() : todo.date.getDay())
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        }, {
+          text: 'Salvar',
+          handler: (alertData) => {
+            if (alertData.todo != "")
+            this.todoService.addTodo(alertData.todo, alertData.date)
+            else {
+              this.presentToast();
+              this.presentAlertPromptAdd();
+              }
+            
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+  
 
 
 
