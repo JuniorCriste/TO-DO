@@ -99,13 +99,13 @@ export class HomePage {
           text: 'Cancelar',
           role: 'cancel'
         }, {
-          text: 'Salvar',
+          text: 'Alterar',
           handler: (alertData) => {
             if (alertData.todo != "")
-            this.todoService.addTodo(alertData.todo, alertData.date)
+            this.todoService.updateTodo(index, alertData.todo, alertData.date)
             else {
               this.presentToast();
-              this.presentAlertPromptAdd();
+              this.todoService.updateTodo(index, alertData.todo, alertData.date);
               }
             
           }
