@@ -63,12 +63,9 @@ export class HomePage {
           role: 'cancel'
         }, {
           text: 'Excluir',
-          handler: () => {
-            this.todoService.delTodo(index);
-              }
-            
+          handler: () => this.todoService.delTodo(index)
           }
-        }
+        
       ]
     });
 
