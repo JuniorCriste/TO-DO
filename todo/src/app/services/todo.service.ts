@@ -22,8 +22,8 @@ export class TodoService {
   
   }
   
-  public delTodo() {
-  
+  public delTodo(index: number) {
+    this.todos.splice(index, 1);  
   }
   
   public updateTodo() {
