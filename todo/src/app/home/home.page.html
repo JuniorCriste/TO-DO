@@ -26,7 +26,7 @@
   <!-- List of Sliding Items -->
 <ion-list *ngIf="type == 'pending'">
   <ion-item-sliding *ngFor="let todo of todoService.getTodos(); let i = index">
-    <ion-item>
+    <ion-item *ngIf="!todo.done" >
       <ion-label>{{todo.value}}</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="todo.done"></ion-checkbox>
       <ion-badge color="warning" *ngIf="todo.date.getDate()">
@@ -50,7 +50,7 @@
 
 <ion-list *ngIf="type == 'done'" >
   <ion-item-sliding *ngFor="let todo of todoService.getTodos(); let i = index">
-    <ion-item>
+    <ion-item *ngIf="todo.done" >
       <ion-label>{{todo.value}}</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="todo.done"></ion-checkbox>
       <ion-badge color="warning" *ngIf="todo.date.getDate()">
