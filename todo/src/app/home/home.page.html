@@ -15,7 +15,7 @@
       <ion-label>{{todo.value}}</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="todo.done"></ion-checkbox>
       <ion-badge color="warning" *ngIf="todo.date.getDate()">
-        {{todo.date}}
+        {{todo.date.getDate() + "/" + (todo.date.getMonth() + 1) + "/" + (todo.date.getFullYear())}}
 
       </ion-badge>
     </ion-item>
