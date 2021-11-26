@@ -17,14 +17,38 @@
     <ion-label>Pendentes</ion-label>
   </ion-segment-button>
   <ion-segment-button value="done" layout="icon-start">
-    <ion-icon name="heart"></ion-icon>
+    <ion-icon name="checkmark-circle"></ion-icon>
     <ion-label>Concluídas</ion-label>
   </ion-segment-button>
 </ion-segment>
 
 
   <!-- List of Sliding Items -->
-<ion-list>
+<ion-list *ngIf="type == 'pending'">
+  <ion-item-sliding *ngFor="let todo of todoService.getTodos(); let i = index">
+    <ion-item>
+      <ion-label>{{todo.value}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="todo.done"></ion-checkbox>
+      <ion-badge color="warning" *ngIf="todo.date.getDate()">
+        {{todo.date.getDate() + "/" + (todo.date.getMonth() + 1) + "/" + (todo.date.getFullYear())}}
+
+      </ion-badge>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color = "success" (click)="presentAlertPromptUpdate(i, todo)">
+      <ion-icon name="create-outline" slot="icon-only"></ion-icon>  
+      </ion-item-option>
+        <ion-item-option color = "danger" (click)="presentAlertPromptDelete(i)">
+        <ion-icon name="trash-outline" slot="icon-only"></ion-icon>  
+        </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+
+
+
+<ion-list *ngIf="type == 'done'" >
   <ion-item-sliding *ngFor="let todo of todoService.getTodos(); let i = index">
     <ion-item>
       <ion-label>{{todo.value}}</ion-label>
