@@ -26,8 +26,13 @@ export class TodoService {
     this.todos.splice(index, 1);  
   }
   
-  public updateTodo() {
-  
+  public updateTodo(index: number, value: string, date: string) {
+     let todo : Todo = this.todos[index];
+     todo.value = value;
+     date = date.replace("-", "/");
+     todo.date = new Date(date);
+     this.todos.splice(index, 1, todo);
+
   }
   
 
