@@ -9,6 +9,9 @@ import { AlertController, ToastController } from '@ionic/angular';
 })
 export class HomePage {
 
+
+  type : string = "pending";
+
   constructor(public alertController: AlertController, 
     public todoService: TodoService,
     public toastController: ToastController) {}
