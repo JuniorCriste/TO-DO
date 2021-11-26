@@ -14,6 +14,10 @@
     <ion-item>
       <ion-label>{{todo.value}}</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="todo.done"></ion-checkbox>
+      <ion-badge color="warning" *ngIf="todo.date.getDate()">
+        {{todo.date}}
+
+      </ion-badge>
     </ion-item>
     <ion-item-options side="end">
       <ion-item-option (click)="unread(item)">Unread</ion-item-option>
