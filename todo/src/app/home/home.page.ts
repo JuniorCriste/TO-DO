@@ -52,6 +52,32 @@ export class HomePage {
   }
 
 
+
+  async presentAlertPromptDelete(index: number) {
+    const alert = await this.alertController.create({
+       header: 'Excluir Tarefa!',
+       message: 'Deseja realmente excluir a tarefa?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel'
+        }, {
+          text: 'Excluir',
+          handler: () => {
+            this.todoService.delTodo(index);
+              }
+            
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+
+
   async presentToast() {
     const toast = await this.toastController.create({
       message: "Preencha a tarafa!",
