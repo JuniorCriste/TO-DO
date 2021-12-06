@@ -20,12 +20,13 @@ export class TodoService {
     date = date.replace("-", "/");
     let todo : Todo = {value: value, date: new Date(date), done: false};
     this.todos.push(todo);
-    console.log(this.todos);
+    this.setToStorage();
   
   }
   
   public delTodo(index: number) {
     this.todos.splice(index, 1);  
+    this.setToStorage();
   }
   
   public updateTodo(index: number, value: string, date: string) {
@@ -34,27 +35,29 @@ export class TodoService {
      date = date.replace("-", "/");
      todo.date = new Date(date);
      this.todos.splice(index, 1, todo);
+     this.setToStorage();
 
   }
   
 
 
+
+
+
+
+public async setToStorage() {
+  await Storage.set({
+    key: 'todos',
+    value: JSON.stringify(this.todos)
+  });
 }
 
 
+
+}
 
 interface Todo {
   value: string;
   date: Date;
   done?: boolean;
 }
-
-public setToStorage = async () => {
-  await Storage.set({
-    key: 'todos',
-    value: JSON.stringify({
-      id: 1,
-      name: 'Max'
-    })
-  });
-};
