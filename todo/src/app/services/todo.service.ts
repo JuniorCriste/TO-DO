@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Storage } from '@capacitor/storage';
+
 
 @Injectable({
   providedIn: 'root'
@@ -46,3 +48,13 @@ interface Todo {
   date: Date;
   done?: boolean;
 }
+
+public setToStorage = async () => {
+  await Storage.set({
+    key: 'todos',
+    value: JSON.stringify({
+      id: 1,
+      name: 'Max'
+    })
+  });
+};
