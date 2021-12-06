@@ -47,10 +47,18 @@ export class TodoService {
 
 public async setToStorage() {
   await Storage.set({
-    key: 'todos',
+    key: 'tarefas',
     value: JSON.stringify(this.todos)
   });
 }
+
+
+
+public async getFromStorage() {
+  const resp = await Storage.get({ key: 'tarefas'});
+  console.log( JSON.parse(resp.value));
+}
+
 
 
 
