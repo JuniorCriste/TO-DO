@@ -18,6 +18,12 @@ export class HomePage {
     public toastController: ToastController,
     public popoverController: PopoverController) {}
 
+
+ngOnInit() {
+  this.todoService.getFromStorage();
+}
+
+
   async presentAlertPromptAdd() {
     const alert = await this.alertController.create({
        header: 'Adicionar tarefa!',
