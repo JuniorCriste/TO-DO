@@ -66,7 +66,8 @@ public async getFromStorage() {
       } else {
         t.date = "";
       }
-      console.log(t);
+      let todo : Todo = {value: t.value, date: new Date(t.date), done: t.done};
+      this.todos.push(todo);
 
     }
     
