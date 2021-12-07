@@ -62,6 +62,9 @@ public async getFromStorage() {
     for (let t of tempTarefas) {
       if (t.date != null) {
         t.date = t.date.substring(0,10); 
+        t.date = t.date.replace(/-/g, "/");
+      } else {
+        t.date = "";
       }
       console.log(t);
 
