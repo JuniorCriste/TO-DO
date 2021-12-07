@@ -57,13 +57,13 @@ public async setToStorage() {
 public async getFromStorage() {
   const resp = await Storage.get({ key: 'tarefas'});
   let tempTarefas : any[] = JSON.parse(resp.value);
-  console.log( JSON.parse(resp.value));
 
   if (!tempTarefas != null) {
     for (let t of tempTarefas) {
       if (t.date != null) {
-        t.date = t.date.substring(0,10);
+        t.date = t.date.substring(0,10); 
       }
+      console.log(t);
 
     }
     
