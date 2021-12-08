@@ -1,10 +1,8 @@
-ion-list{
+ion-segment{
   transition: 0.3s;
+  opacity: 0.5;
 }
 
-ion-list:hover{
-opacity: 0.4;
-}
 
 #container {
   text-align: center;
