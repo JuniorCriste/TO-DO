@@ -1,6 +1,11 @@
 ion-list{
   transition: 0.3s;
 }
+
+ion-list:hover{
+opacity: 0.4;
+}
+
 #container {
   text-align: center;
   position: absolute;
