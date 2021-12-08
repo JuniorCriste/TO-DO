@@ -2,6 +2,5 @@
 	"appId": "io.ionic.starter",
 	"appName": "todo",
 	"webDir": "www",
-	"bundledWebRuntime": false,
-    "linuxAndroidStudioPath": "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=android-studio com.google.AndroidStudio"
+	"bundledWebRuntime": false
 }
