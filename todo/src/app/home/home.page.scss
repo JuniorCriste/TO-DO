@@ -1,8 +1,11 @@
-ion-segment{
-  transition: 0.3s;
-  opacity: 0.5;
+ion-item{-webkit-transition: width 0.3s, height 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+  transition: width 0.3s, height 0.3s, background-color 0.3s, transform 0.3s;
+ 
 }
 
+.heypunk{
+  background-color: aqua;
+}
 
 #container {
   text-align: center;

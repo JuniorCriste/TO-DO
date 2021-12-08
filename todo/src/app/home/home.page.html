@@ -31,10 +31,10 @@
   <!-- List of Sliding Items -->
 <ion-list *ngIf="type == 'pending'">
   <ion-item-sliding *ngFor="let todo of todoService.getTodos(); let i = index">
-    <ion-item *ngIf="!todo.done" >
+    <ion-item *ngIf="!todo.done">
       <ion-label>{{todo.value}}</ion-label>
       <ion-checkbox slot="start" [(ngModel)]="todo.done" (ionChange)="todoService.setToStorage()"></ion-checkbox>
-      <ion-badge color="warning" *ngIf="todo.date.getDate()">
+      <ion-badge color="warning" *ngIf="todo.date.getDate()" >
         {{todo.date.getDate() + "/" + (todo.date.getMonth() + 1) + "/" + (todo.date.getFullYear())}}
 
       </ion-badge>
