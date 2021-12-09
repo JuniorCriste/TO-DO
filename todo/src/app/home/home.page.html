@@ -20,15 +20,15 @@
   <ion-segment-button value="pending" layout="icon-start">
     <ion-icon name="alert-circle"></ion-icon>
     <ion-label>Pendentes</ion-label>
-    <ion-badge class="heypunk" > 
-      {{todoService.statusTarefas().emAberto}}
+    <ion-badge class="heypunk"  *ngIf="todoService.statusTarefas(0,0).c != 0;"> 
+      {{todoService.statusTarefas(0,0).c}}
     </ion-badge>
   </ion-segment-button>
   <ion-segment-button value="done" layout="icon-start">
     <ion-icon name="checkmark-circle"></ion-icon>
     <ion-label>Concluídas</ion-label>
-    <ion-badge class="heypunk"> 
-      {{todoService.statusTarefas().jaConcluido}}
+    <ion-badge class="heypunk" *ngIf="todoService.statusTarefas(0,0).d != 0;" > 
+      {{todoService.statusTarefas(0,0).d}}
     </ion-badge>
 
   </ion-segment-button>

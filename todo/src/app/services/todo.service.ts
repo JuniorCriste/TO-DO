@@ -7,7 +7,8 @@ import { Storage } from '@capacitor/storage';
 })
 export class TodoService {
 
-
+  public emAberto: number;
+  public jaConcluido: number;
   private todos: Todo[] = [];
 
   constructor() { }
@@ -36,23 +37,24 @@ export class TodoService {
      todo.date = new Date(date);
      this.todos.splice(index, 1, todo);
      this.setToStorage();
-     this.statusTarefas();
 
   }
 
-  public statusTarefas() {
-    let emAberto: number;
-    let jaConcluido: number;
+  public statusTarefas(emAbertoX: number, jaConcluidoX: number ) {
+
     let cont: number = 0;
+
     for (cont= 0; cont < this.todos.length; cont++) {
       if (this.todos[cont].done == true){
-        jaConcluido = jaConcluido + 1;
+        jaConcluidoX = jaConcluidoX + 1;
       } else {
-        emAberto = emAberto + 1;
+        emAbertoX = emAbertoX + 1;
       }
     }
+    let c = emAbertoX ;
+    let d = jaConcluidoX ;
+    return {c, d};
 
-    return {jaConcluido, emAberto};
       
   }
   
