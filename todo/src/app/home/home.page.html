@@ -21,13 +21,14 @@
     <ion-icon name="alert-circle"></ion-icon>
     <ion-label>Pendentes</ion-label>
     <ion-badge class="heypunk" > 
-      {{todoService.emAberto}}
+      {{todoService.statusTarefas().emAberto}}
     </ion-badge>
   </ion-segment-button>
   <ion-segment-button value="done" layout="icon-start">
     <ion-icon name="checkmark-circle"></ion-icon>
     <ion-label>Concluídas</ion-label>
-    <ion-badge class="heypunk"> {{todoService.jaConcluido}}
+    <ion-badge class="heypunk"> 
+      {{todoService.statusTarefas().jaConcluido}}
     </ion-badge>
 
   </ion-segment-button>

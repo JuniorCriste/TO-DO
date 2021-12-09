@@ -9,8 +9,6 @@ export class TodoService {
 
 
   private todos: Todo[] = [];
-  public emAberto: number = 0;
-  public jaConcluido: number = 0;
 
   constructor() { }
 
@@ -38,17 +36,22 @@ export class TodoService {
      todo.date = new Date(date);
      this.todos.splice(index, 1, todo);
      this.setToStorage();
+     this.statusTarefas();
 
   }
 
-  public statusTarefas(i: number) {
-    for (let cont: 0; i < this.todos.length; cont++) {
-      if (this.todos[cont].value == "done"){
-        this.jaConcluido == this.jaConcluido++;
+  public statusTarefas() {
+    let emAberto: number = 0;
+    let jaConcluido: number = 0;
+    for (let cont: 0; cont < this.todos.length; cont++) {
+      if (this.todos[cont].done == true){
+        jaConcluido == jaConcluido++;
       } else {
-        this.emAberto == this.emAberto++;
+        emAberto == emAberto++;
       }
     }
+    return {jaConcluido,
+      emAberto}
   }
   
 
