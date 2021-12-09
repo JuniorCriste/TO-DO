@@ -46,14 +46,13 @@ export class TodoService {
     let cont: number = 0;
     for (cont= 0; cont < this.todos.length; cont++) {
       if (this.todos[cont].done == true){
-        jaConcluido == jaConcluido++
+        jaConcluido = jaConcluido + 1;
       } else {
-        emAberto == emAberto++;
+        emAberto = emAberto + 1;
       }
     }
 
-    return {jaConcluido,
-      emAberto}
+    return {jaConcluido, emAberto};
       
   }
   
