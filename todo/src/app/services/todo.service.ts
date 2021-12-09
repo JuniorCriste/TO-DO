@@ -9,6 +9,7 @@ export class TodoService {
 
 
   private todos: Todo[] = [];
+  public nome: string = "JUNIOOR";
 
   constructor() { }
 
