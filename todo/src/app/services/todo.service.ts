@@ -41,22 +41,22 @@ export class TodoService {
   }
 
   public statusTarefas() {
-    let emAberto: number = 0;
-    let jaConcluido: number = 0;
-    for (let cont: 0; cont < this.todos.length; cont++) {
+    let emAberto: number;
+    let jaConcluido: number;
+    let cont: number = 0;
+    for (cont= 0; cont < this.todos.length; cont++) {
       if (this.todos[cont].done == true){
-        jaConcluido == jaConcluido++;
+        jaConcluido == jaConcluido++
       } else {
         emAberto == emAberto++;
       }
     }
+
     return {jaConcluido,
       emAberto}
+      
   }
   
-
-
-
 
 
 
