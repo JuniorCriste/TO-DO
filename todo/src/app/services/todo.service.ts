@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@capacitor/storage';
+import { type } from 'os';
 
 
 @Injectable({
@@ -39,6 +40,16 @@ export class TodoService {
      this.todos.splice(index, 1, todo);
      this.setToStorage();
 
+  }
+
+  public jaConcluidoTarefas(i: number) {
+    for (let cont: 0; i < this.todos.length; cont++) {
+      if (this.todos[cont].value == "done"){
+        this.jaConcluido == this.jaConcluido++;
+      } else {
+        this.emAberto == this.emAberto++;
+      }
+    }
   }
   
 
