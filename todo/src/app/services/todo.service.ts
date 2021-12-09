@@ -9,8 +9,8 @@ export class TodoService {
 
 
   private todos: Todo[] = [];
-  public emAberto: number;
-  public jaConcluido: number;
+  public emAberto: number = 0;
+  public jaConcluido: number = 0;
 
   constructor() { }
 
