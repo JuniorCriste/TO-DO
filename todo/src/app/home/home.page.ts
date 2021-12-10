@@ -156,5 +156,28 @@ ngOnInit() {
 }
 
 
+
+
+
 }
 
+
+
+// inicio ADMOB
+
+export async function interstitial(): Promise<void> {
+  AdMob.addListener(InterstitialAdPluginEvents.Loaded, (info: AdLoadInfo) => {
+    // Subscribe prepared interstitial
+  });
+
+  const options: AdOptions = {
+    adId: 'YOUR ADID',
+    // isTesting: true
+    // npa: true
+  };
+  await AdMob.prepareInterstitial(options);
+  await AdMob.showInterstitial();
+}
+
+
+// fim ADMOB
