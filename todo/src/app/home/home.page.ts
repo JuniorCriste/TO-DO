@@ -4,6 +4,7 @@ import { AlertController, PopoverController, ToastController } from '@ionic/angu
 import { PopoverComponent } from '../popover/popover.component';
 import { AdMob, AdOptions, AdLoadInfo, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -163,6 +164,9 @@ ngOnInit() {
 
 
 
+
+
+
 // inicio ADMOB
 
 export async function interstitial(): Promise<void> {
@@ -204,10 +208,6 @@ export async function initialize(): Promise<void> {
     initializeForTesting: true,
   });
 }
-
-
-// inicio ADMOB
-
 
 
 
