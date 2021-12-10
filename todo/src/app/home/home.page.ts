@@ -2,6 +2,7 @@ import { TodoService } from './../services/todo.service';
 import { Component } from '@angular/core';
 import { AlertController, PopoverController, ToastController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
+import { AdMob, AdOptions, AdLoadInfo, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 
 @Component({
   selector: 'app-home',
