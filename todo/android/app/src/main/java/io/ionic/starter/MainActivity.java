@@ -3,7 +3,7 @@ package io.ionic.starter;
 import com.getcapacitor.BridgeActivity;
 
 public class MainActivity extends BridgeActivity {
- //início ADMOB
+ //inicio ADMOB
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
