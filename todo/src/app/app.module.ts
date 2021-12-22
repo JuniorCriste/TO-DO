@@ -1,8 +1,8 @@
 // DEVIDO A ATUALIZAÇÕES, o firebase é importado com camada de compatibilidade.
 
-import { AngularFireModule} from '@angular/fire/compat'
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { firebaseConfig } from './credential';
+//import { AngularFireModule} from '@angular/fire/compat'
+//import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+//import { firebaseConfig } from './credential';
 
 import { TodoService } from './services/todo.service';
 import { NgModule } from '@angular/core';
@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
   entryComponents: [],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
-    AngularFireModule.initializeApp(firebaseConfig) 
+    //AngularFireModule.initializeApp(firebaseConfig) 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   TodoService
